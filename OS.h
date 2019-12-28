@@ -43,7 +43,7 @@ void OS_Run(void);
 EnmOSError_t OS_Create_Task(const ST_Task_Info *ST_Incoming_Task_Info );
 EnmOSError_t OS_Delete_Task(const ST_Task_Info * ST_Incoming_Task_Info );
 void CPU_Sleep (void);
-void ISR_Generated_Flag_Setter();
+void ISR_Systick();
 
 
 #endif /* OS_H_ */

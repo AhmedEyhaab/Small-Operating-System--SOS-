@@ -13,9 +13,9 @@ void Task1 (void);
 void Task2 (void);
 void Task3 (void);
 
-ST_Task_Info Task_1_Info={Task1,6,PERIODIC,Ready,1};
-ST_Task_Info Task_2_Info={Task2,3,PERIODIC,Ready,2};
-ST_Task_Info Task_3_Info={Task3,12,PERIODIC,Ready,3};
+ST_Task_Info Task_1_Info={Task1,6,PERIODIC,Ready,3};
+ST_Task_Info Task_2_Info={Task2,3,PERIODIC,Ready,1};
+ST_Task_Info Task_3_Info={Task3,12,PERIODIC,Ready,2};
 
 
 int main()
@@ -39,21 +39,27 @@ int main()
 
 void Task1 (void)
 {
+	PORTB |= (1<<PB5);
 	PORTC ^= (1<<PC5);
 	/*_delay_us(50);
 	PORTC ^= (1<<PC5);*/
+	PORTB &= ~(1<<PB5);
 }
 
 void Task2 (void)
 {
+	PORTB |= (1<<PB6);
 	PORTC ^= (1<<PC6);
 	/*_delay_us(50);
 	PORTC ^= (1<<PC6);*/
+	PORTB &= ~(1<<PB6);
 }
 
 void Task3 (void)
 {
+	PORTB |= (1<<PB7);
 	PORTC ^= (1<<PC7);
 	/*_delay_us(50);
 	PORTC ^= (1<<PC7);*/
+	PORTB &= ~(1<<PB7);
 }
